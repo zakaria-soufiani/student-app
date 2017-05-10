@@ -1,49 +1,59 @@
 <div class="row">
-  <div class="col-sm-4">
+  <div class="col-sm-6">
     <form class="form-horizontal" #f="ngForm"
           (ngSubmit)="onSubmit(f)" novalidate>
       <fieldset>
         <legend>Input information</legend>
         <div class="form-group">
-          <label class="col-lg-2 control-label">First Name</label>
+          <label class="col-lg-2 control-label">University</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" name="inputFirstName" placeholder="First Name" ngModel>
+            <input type="text" class="form-control" name="inputUniversity" placeholder="University" ngModel>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label">Last Name</label>
+          <label class="col-lg-2 control-label">Budget</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" name="inputLastName" placeholder="Last Name" ngModel>
+            <label>From</label>
+              <input type="text" class="form-control" name="inputBudgetMin" placeholder="Minimum Budget" ngModel>
+            <label>To</label>
+              <input type="text" class="form-control" name="inputBudgetMax" placeholder="Maximum Budget" ngModel>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label">Email</label>
+          <label class="col-lg-2 control-label">Distance from University</label>
           <div class="col-lg-10">
-            <input type="text" class="form-control" name="inputEmail" placeholder="Email" ngModel>
+            <select class="form-control" class="form-control" name="inputDistanceUniversity" ngModel>
+              <option>1 Km</option>
+              <option>5 Km</option>
+              <option>10 Km</option>
+              <option>15 Km</option>
+              <option>20 Km</option>
+              <option>More than 20 Km</option>
+            </select>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label">Comments</label>
+          <label class="col-lg-2 control-label">Distance from public transport</label>
           <div class="col-lg-10">
-            <textarea class="form-control" rows="3" name="textArea" ngModel></textarea>
+            <select class="form-control" class="form-control" name="inputDistanceTransport" ngModel>
+            <option>0.5 Km</option>
+            <option>1 Km</option>
+            <option>1.5 Km</option>
+            <option>2 Km</option>
+            <option>More than 2 Km</option>
+            </select>
           </div>
         </div>
         <div class="form-group">
-          <label class="col-lg-2 control-label">Options</label>
+          <label class="col-lg-2 control-label">Distance from shops</label>
           <div class="col-lg-10">
-            <div class="radio">
-              <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1"
-                       value="option1" checked="" ngModel>
-                Option one
-              </label>
-            </div>
-            <div class="radio">
-              <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" ngModel>
-                Option two
-              </label>
-            </div>
+            <select class="form-control" class="form-control" name="inputDistanceShops" ngModel>
+              <option>0.5 Km</option>
+              <option>1 Km</option>
+              <option>1.5 Km</option>
+              <option>2 Km</option>
+              <option>More than 2 Km</option>
+            </select>
           </div>
         </div>
         <div class="form-group">
@@ -54,8 +64,35 @@
         </div>
       </fieldset>
     </form>
+    <legend>Result Table</legend>
+
+    <table class="table table-striped table-hover ">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Suburbs</th>
+        <th>Distance from UQ</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>Toowong</td>
+        <td>1.5 Km</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Chermside</td>
+        <td>15.5 Km</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Random Suburb</td>
+        <td>Random Distance</td>
+      </tr>
+    </table>
   </div>
-  <div class="col-sm-8">
+  <div class="col-sm-3">
     <legend>Results Map</legend>
     <img src="http://cdn.newsapi.com.au/image/v1/0a0ceda4bda18e664ffac1a8fa86a7d1">
   </div>
