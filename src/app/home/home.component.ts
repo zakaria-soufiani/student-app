@@ -8,12 +8,20 @@ import {NgForm} from "@angular/forms";
 })
 export class HomeComponent implements OnInit {
 
-  public  values = [2, 3, 4, 5, 6];
+  public  values = [];
 
 
   onSubmit(f: NgForm){
     console.log(f.value);
     console.log(f.valid);
+    this.values = f.value;
+    console.log(this.values);
+  }
+
+  clearValues(){
+    this.values = [];
+    console.log(this.values);
+
   }
 
   constructor() { }
