@@ -19,15 +19,57 @@
                      placeholder="Minimum Budget" ngModel #inputBudgetMin="ngModel">
             <label>To</label>
               <input type="number" class="form-control" name="inputBudgetMax"
-                     placeholder="Maximum Budget" ngModel #inputBudgetMax="ngModel">
+                     placeholder="Maximum Budget" ngModel #inputBudgetMax="ngModel" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-lg-2 control-label">Method of transport</label>
+          <div class="row">
+            <div class="col-sm-3">
+              <div>
+                <input type="radio" name="inputModeTransport"
+                       ngModel #inputModeTransport = "ngModel" value="Cycling">
+                <i class="fa fa-bicycle fa-2x" aria-hidden="true"></i> Cycling
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div>
+                <input type="radio" name="inputModeTransport" ngModel #inputModeTransport = "ngModel" value="Bus">
+                <i class="fa fa-bus fa-2x" aria-hidden="true"></i> Bus
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div>
+                <input type="radio" name="inputModeTransport" ngModel #inputModeTransport = "ngModel" value="walking">
+                <i class="fa fa-male fa-2x" aria-hidden="true"></i> Walking
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div>
+                <input type="radio" name="inputModeTransport" ngModel #inputModeTransport = "ngModel" value="Car">
+                <i class="fa fa-car fa-2x" aria-hidden="true"></i>Car
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div>
+                <input type="radio" name="inputModeTransport" ngModel #inputModeTransport = "ngModel" value="Ferry">
+                <i class="fa fa-ship fa-2x" aria-hidden="true"></i> Ferry
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div>
+                <input type="radio" name="inputModeTransport" ngModel #inputModeTransport = "ngModel" value="Rocket">
+                <i class="fa fa-rocket fa-2x" aria-hidden="true"></i> Rocket
+              </div>
+            </div>
           </div>
         </div>
         <div class="form-group">
           <label class="col-lg-2 control-label">Distance from University</label>
           <div class="col-lg-10">
-            <select class="form-control" class="form-control" name="inputDistanceUniversity"
+            <select class="form-control" name="inputDistanceUniversity"
                     ngModel #inputDistanceUniversity="ngModel">
-              <option>1 Km</option>
+              <option selected>1 Km</option>
               <option>5 Km</option>
               <option>10 Km</option>
               <option>15 Km</option>
@@ -64,6 +106,7 @@
         </div>
         <div class="form-group">
           <div class="col-lg-10 col-lg-offset-2">
+            <p>Cancel will clear the form and user inputs</p>
             <button type="reset" class="btn btn-default" (click)="clearValues()">Cancel</button>
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
@@ -71,7 +114,6 @@
       </fieldset>
     </form>
     <legend>Result Table</legend>
-
     <table class="table table-striped table-hover ">
       <thead>
       <tr>
@@ -98,9 +140,10 @@
       </tr>
     </table>
   </div>
-  <div class="col-sm-6">
+  <div  class="col-sm-6">
     <legend>Results Map</legend>
-    <img src="http://cdn.newsapi.com.au/image/v1/0a0ceda4bda18e664ffac1a8fa86a7d1">
+    <img *ngIf="!showImage" src="http://cdn.newsapi.com.au/image/v1/0a0ceda4bda18e664ffac1a8fa86a7d1">
+    <img *ngIf="showImage"  src="http://www.amolpandey.com/wp-content/uploads/2014/02/blog13_pic3.png">
     <br>
     <legend>User Choices</legend>
     <ul class="list-group">
@@ -123,6 +166,10 @@
       <li class="list-group-item">
         <span class="badge">{{values.inputDistanceShops}}</span>
         Distance from shops
+      </li>
+      <li class="list-group-item">
+        <span class="badge">{{values.inputModeTransport}}</span>
+        Mode of transport
       </li>
     </ul>
   </div>
